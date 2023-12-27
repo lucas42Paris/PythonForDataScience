@@ -1,13 +1,12 @@
 # print(filter.__doc__)
 
-# filter(function or None, iterable)
+def ft_filter(function, iterable):
+	return (item for item in iterable if function(item))
 
-def is_odd(n):
-    return (n % 2 == 0)
+def main():
+	numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+	even_numbers = ft_filter(lambda x: x % 2 == 0, numbers)
+	print(list(even_numbers))
 
-nbr = [1, 2, 3, 4, 5, 6]
-
-result = filter(is_odd, nbr)
-odd_nbr = list(result)
-
-print(odd_nbr)
+if __name__ == "__main__":
+	main()
